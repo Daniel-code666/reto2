@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="*">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Games</title>
+    </head>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .center{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <body>
+        <div style="text-align: center;">
+            <input type="number" id="miId" placeholder="Id">
+            <input type="text" id="developer" placeholder="Developer">
+            <input type="number" id="minage" placeholder="Minage">
+            <input type="number" id="cat_id" placeholder="Category Id">
+            <input type="text" id="name" placeholder="Name">
+            <button onclick="registro()">Registrar</button>
+            <button onclick="editGame()">Editar</button>
+        </div>
+
+        <br>
+
+        <div style="text-align: center;">
+            <button onclick="getGames()">Listar juegos</button>
+            
+            <div class="center">
+                <table >
+                    <tbody id="items"> 
+                        <tr>
+                            <td>
+                                Id
+                            </td>
+                            <td>
+                                Developer
+                            </td>
+                            <td>
+                                Minage
+                            </td>
+                            <td>
+                                Category
+                            </td>
+                            <td>
+                                Name
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <br>
+        
+        <div class="center">
+            <button type="submit" value="Enviar" onclick="peticionGet()">GET</button>
+            <button type="submit" value="Enviar" onclick="peticionPost()">POST</button>
+            <button type="submit" value="Enviar" onclick="peticionPut()">PUT</button>
+            <button type="submit" value="Enviar" onclick="peticionDelete()">DELETE</button>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
