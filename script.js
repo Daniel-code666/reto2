@@ -23,6 +23,7 @@ function registro(){
             console.log(response.status)
         },
         error:function(error){
+            console.log(error);
         }
     });
 }
@@ -43,8 +44,8 @@ function getGames(){
                 $("#items").append("<td>" + misItems[i].minage + "</td>");
                 $("#items").append("<td>" + misItems[i].category_id + "</td>");
                 $("#items").append("<td>" + misItems[i].name + "</td>");
-                $("#items").append('<td><button onclick="deleteGame('+ misItems[i].id+')">Borrar</button></td>');
-                $("#items").append('<td><button onclick="getGamesById('+ misItems[i].id+')">Editar</button></td>');
+                $("#items").append('<button onclick="deleteGame('+ misItems[i].id+')">Borrar</button>');
+                $("#items").append('<button onclick="getGamesById('+ misItems[i].id+')">Editar</button>');
                 $("#items").append("</tr>");
             }
         }
@@ -65,9 +66,7 @@ function getGamesById(idItem){
             $("#cat_id").val(item.category_id);
             $("#name").val(item.name)
         },
-        error: function(jqXHR, textStatus, errorThrown) {
-            
-        }
+        error: function(jqXHR, textStatus, errorThrown) {}
     });
 }
 
@@ -94,7 +93,6 @@ function editGame(){
         },
         
         error: function(jqXHR, textStatus, errorThrown) {
-                
         }
     });
 }
