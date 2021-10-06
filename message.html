@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="*">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
         <title>Mensajes</title>
     </head>
 
@@ -14,45 +17,64 @@
             border-collapse: collapse;
         }
 
+        .column {
+            flex: 50%;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+        }
+
         .center{
             display: flex;
             justify-content: center;
         }
+
+        .body{
+            background-color: dimgrey;
+        }
     </style>
 
-    <body>
+    <body class="body">
         <div style="text-align: center;">
             <input type="number" id="miId" placeholder="Id">
             <input type="text" id="message" placeholder="Message">
-            <button onclick="insertMsg()">Registrar</button>
-            <button onclick="editMsg()">Editar</button>
+            <button type="button" class="btn btn-success btn-sm" onclick="insertMsg()">Registrar</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="editMsg()">Editar</button>
         </div>
 
         <br>
 
-        <div style="text-align: center;">
-            <button onclick="getMsg()">Listar mensajes</button>
-            
-            <div class="center">
-                <table >
+        <div class="row">
+            <div class="column">
+                <table class="table table-dark table-striped">
                     <tbody id="items"> 
                         <tr>
-                            <td>
+                            <th>
                                 Id
-                            </td>
-                            <td>
+                            </th>
+                            <th>
                                 Mensaje
-                            </td>
+                            </th>
+                            <th>
+                                Acciones
+                            </th>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <div style="text-align: center;">
+            <button type="button" class="btn btn-info btn-sm" onclick="getMsg()">Listar mensajes</button>
+        </div>
+
         <br>
 
         <div class="center">
-            <a href="/index.html" class="center">Juegos </a> | <a href="/client.html" class="center"> Clientes</a>
+            <a type="button" href="/index.html" class="btn btn-primary btn-sm">Juegos </a>
+            <a type="button" href="/client.html" class="btn btn-dark btn-sm"> Clientes</a>
         </div>
 
         <script src="script-msg.js"></script>

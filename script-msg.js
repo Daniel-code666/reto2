@@ -38,8 +38,8 @@ function getMsg(){
                 $("#items").append("<tr>");
                 $("#items").append("<td>" + misItems[i].id + "</td>");
                 $("#items").append("<td>" + misItems[i].messagetext + "</td>");
-                $("#items").append('<button onclick="deleteMsg('+ misItems[i].id+')">Borrar</button>');
-                $("#items").append('<button onclick="getMsgById('+ misItems[i].id+')">Editar</button>');
+                $("#items").append('<button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteMsg('+ misItems[i].id+')">Borrar</button>');
+                $("#items").append('<button type="button" class="btn btn-outline-warning btn-sm" onclick="getMsgById('+ misItems[i].id+')">Editar</button>');
                 $("#items").append("</tr>");
             }
         }

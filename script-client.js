@@ -42,8 +42,8 @@ function getClient(){
                 $("#items").append("<td>" + misItems[i].name + "</td>");
                 $("#items").append("<td>" + misItems[i].email + "</td>");
                 $("#items").append("<td>" + misItems[i].age + "</td>");
-                $("#items").append('<button onclick="deleteClient('+ misItems[i].id+')">Borrar</button>');
-                $("#items").append('<button onclick="getClientById('+ misItems[i].id+')">Editar</button>');
+                $("#items").append('<button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteClient('+ misItems[i].id+')">Borrar</button>');
+                $("#items").append('<button type="button" class="btn btn-outline-warning btn-sm" onclick="getClientById('+ misItems[i].id+')">Editar</button>');
                 $("#items").append("</tr>");
             }
         }

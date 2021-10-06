@@ -44,8 +44,8 @@ function getGames(){
                 $("#items").append("<td>" + misItems[i].minage + "</td>");
                 $("#items").append("<td>" + misItems[i].category_id + "</td>");
                 $("#items").append("<td>" + misItems[i].name + "</td>");
-                $("#items").append('<button onclick="deleteGame('+ misItems[i].id+')">Borrar</button>');
-                $("#items").append('<button onclick="getGamesById('+ misItems[i].id+')">Editar</button>');
+                $("#items").append('<button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteGame('+ misItems[i].id+')">Borrar</button>');
+                $("#items").append('<button type="button" class="btn btn-outline-warning btn-sm" onclick="getGamesById('+ misItems[i].id+')">Editar</button>');
                 $("#items").append("</tr>");
             }
         }

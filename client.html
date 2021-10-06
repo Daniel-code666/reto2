@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="*">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
         <title>Clientes</title>
     </head>
 
@@ -14,56 +17,71 @@
             border-collapse: collapse;
         }
 
+        .column {
+            flex: 50%;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+        }
+
         .center{
             display: flex;
             justify-content: center;
         }
+
+        .body{
+            background-color: dimgrey;
+        }
     </style>
 
-    <body>
+    <body class="body">
+        <br>
         <div style="text-align: center;">
             <input type="number" id="miId" placeholder="Id">
             <input type="text" id="name" placeholder="Name">
             <input type="email" id="email" placeholder="Email">
             <input type="number" id="age" placeholder="Age">
-            <button onclick="insertClient()">Registrar</button>
-            <button onclick="editClient()">Editar</button>
+            <button type="button" class="btn btn-success btn-sm" onclick="insertClient()">Registrar</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="editClient()">Editar</button>
         </div>
 
         <br>
-
-        <div style="text-align: center;">
-            <button onclick="getClient()">Listar clientes</button>
-            
-            <div class="center">
-                <table >
+        <div class="row">
+            <div class="column">
+                <table class="table table-dark table-striped">
                     <tbody id="items"> 
                         <tr>
-                            <td>
+                            <th>
                                 Id
-                            </td>
-                            <td>
+                            </th>
+                            <th>
                                 Name
                             </td>
-                            <td>
+                            <th>
                                 Email
-                            </td>
-                            <td>
+                            </th>
+                            <th>
                                 Age
-                            </td>
-                            <td>
+                            </th>
+                            <th>
                                 Acciones
-                            </td>
+                            </th>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+        <div style="text-align: center;">
+            <button type="button" class="btn btn-info btn-sm" onclick="getClient()">Listar clientes</button>
+        </div>
 
         <br>
 
         <div class="center">
-            <a href="/index.html" class="center">Juegos </a> | <a href="/message.html" class="center"> Mensajes</a>
+            <a type="button" href="/index.html" class="btn btn-primary btn-sm">Juegos </a> 
+            <a type="button" href="/message.html" class="btn btn-dark btn-sm"> Mensajes</a>
         </div>
 
         <script src="./script-client.js"></script>
